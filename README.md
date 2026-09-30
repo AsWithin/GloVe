@@ -1,14 +1,14 @@
 # GloVe 与 IMDb 情感分析实践
 
-本项目记录一次导师布置的模型运行实践：将已有的 GloVe 词向量转换为 Gensim 可读取的格式，再运行 PyTorch 编写的 IMDb 情感分类代码，体验数据预处理、模型训练和预测的完整流程。
+本项目记录一次布置的模型运行实践：将已有的 GloVe 词向量转换为 Gensim 可读取的格式，再运行 PyTorch 编写的 IMDb 情感分类代码，体验数据预处理、模型训练和预测的完整流程。
 
 ## 项目背景与个人工作
 
-导师提供了 GloVe 模型和一整套 `imdb_sentiment_analysis_torch` 代码，并要求从 GitHub 寻找 `glove-gensim.py`，进行少量转换后使用模型，再运行情感分析代码。
+使用了 GloVe 模型和一整套 `imdb_sentiment_analysis_torch` 代码，运行情感分析代码。
 
 在这次实践中，我使用 DeepSeek 大模型辅助修改了从 GitHub 下载的 `glove-gensim.py`，以适配 Python 3.14 环境；同时借助大模型修改了 `imdb_process.py` 和 `imdb_cnn.py`，完成运行并保存了预测结果。本仓库保留这三个脚本及已有结果，作为学习过程的记录。
 
-原始模型、转换脚本和情感分析代码并非本人从零编写。原始转换脚本的具体 GitHub 地址、导师提供代码的上游地址和许可证尚未记录，待确认后补充；现有代码中的来源注释予以保留。本仓库未为这些第三方代码另行指定许可证。
+原始模型、转换脚本和情感分析代码并非本人从零编写。原始转换脚本的具体 GitHub 地址、情感分析代码的上游地址和许可证尚未记录，待确认后补充；现有代码中的来源注释予以保留。本仓库未为这些第三方代码另行指定许可证。
 
 ## 仓库内容
 
@@ -49,7 +49,7 @@ python -m pip install -r requirements.txt
 
 ### 准备 GloVe 词向量
 
-将 `glove.840B.300d.txt` 放入 `resource/`。可以使用导师提供的文件，也可从 [Stanford GloVe 官方页面](https://nlp.stanford.edu/projects/glove/) 获取对应的 840B、300 维词向量。详见 [资源说明](resource/README.md)。
+将 `glove.840B.300d.txt` 放入 `resource/`。可以使用已有的文件，也可从 [Stanford GloVe 官方页面](https://nlp.stanford.edu/projects/glove/) 获取对应的 840B、300 维词向量。详见 [资源说明](resource/README.md)。
 
 转换脚本使用当前工作目录中的文件，需进入 `resource` 运行：
 
@@ -70,7 +70,7 @@ Set-Location ..
 - `testData.tsv`：待预测的影评。
 - `unlabeledTrainData.tsv`：现有预处理脚本会读取该文件，虽然后续流程未使用，运行时仍需提供。
 
-可使用导师提供的数据；这些文件名对应 [Kaggle 的 Bag of Words Meets Bags of Popcorn 数据页面](https://www.kaggle.com/c/word2vec-nlp-tutorial/data)。下载可能需要登录并接受该数据集的使用条件。
+可使用已有的数据；这些文件名对应 [Kaggle 的 Bag of Words Meets Bags of Popcorn 数据页面](https://www.kaggle.com/c/word2vec-nlp-tutorial/data)。下载可能需要登录并接受该数据集的使用条件。
 
 ### 预处理与训练
 
