@@ -1,0 +1,21 @@
+# Publish only the selected resources and scripts.
+/resource/*
+!/resource/glove-gensim.py
+!/resource/README.md
+/model/glove_model.txt
+/imdb_sentiment_analysis_torch/*
+!/imdb_sentiment_analysis_torch/imdb_process.py
+!/imdb_sentiment_analysis_torch/imdb_cnn.py
+!/imdb_sentiment_analysis_torch/result/
+/imdb_sentiment_analysis_torch/result/*
+!/imdb_sentiment_analysis_torch/result/cnn.csv
+__pycache__/
+*.py[cod]
+.vscode/
+.idea/
+.venv/
+venv/
+.env
+.env.*
+Thumbs.db
+.DS_Store
