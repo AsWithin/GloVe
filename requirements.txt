@@ -1,0 +1,8 @@
+# Direct dependencies inferred from imports; versions are not a tested lockfile.
+gensim
+pandas
+torch
+beautifulsoup4
+lxml
+scikit-learn
+tqdm
